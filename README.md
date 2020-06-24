@@ -17,7 +17,6 @@ source venv/bin/activate
 python3 app.py
 ```
 
-
 ### To Do
 
 * Title fontsize adjustment: how to double-line for super-long titles?
