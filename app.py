@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, render_template, make_response, redirect, url_for, flash
+from flask import Flask, Response, request, render_template, make_response, redirect, url_for, flash, send_from_directory
 import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
@@ -160,8 +160,8 @@ def transform_view():
         pdf.savefig(fig, bbox_inches = 'tight')
     pdf.close()
 
-    return redirect(url_for("boxplot_report"))
-    #return send_file('./tmp/output3.pdf', attachment_filename='output3.pdf')
+    #return redirect(url_for("boxplot_report"))
+    return send_from_directory(app.config["CLIENT_DIR"], filename=fn, as_attachment=True)
 
 
 if __name__ == "__main__":
