@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Boxplot Report</h1>
+    <hr>
+    <div class="mb-3">
+      <div class="form-group">
+        <form action="/transform" method="post" enctype="multipart/form-data">
+          <label>Upload main input file (csv)</hlabel>
+          <input type="file" name="input_file" id="input_file">
+          <hr/>
+          <input type="submit" value="Process & Download" name="submit">
+        </form>
+      </div>
+    </div>
+{% endblock content %}
